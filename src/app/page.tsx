@@ -1,7 +1,16 @@
+"use client";
+import { useEdgeStore } from "@/lib/edgestore";
 import { SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
+  const { edgestore, reset } = useEdgeStore();
+
+  useEffect(() => {
+    reset();
+  }, []);
+
   return (
     <main>
       <div className="flex flex-col">
