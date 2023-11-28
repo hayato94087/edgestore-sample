@@ -6,6 +6,7 @@ import { useEdgeStore } from "../../lib/edgestore";
 export default function Home() {
   const [file, setFile] = useState<File>();
   const { edgestore } = useEdgeStore();
+  const [uploadImage, setUploadImage] = useState<string>();
 
   return (
     <main>
@@ -29,6 +30,9 @@ export default function Home() {
               // you can run some server action or api here
               // to add the necessary data to your database
               console.log(res);
+              if (res && res.url) {
+                setUploadImage(res.url);
+              }
             }
           }}
           className="bg-black text-white px-4 py-2 rounded-md"
@@ -36,6 +40,13 @@ export default function Home() {
           Upload
         </button>
       </div>
+      {/* following line will not work */}
+      {/* {uploadImage && (
+        <Image src={uploadImage} height={100} width={100} alt={""} />
+      )} */}
+
+      {uploadImage && <img src={uploadImage} />}
+      {uploadImage && <div>{uploadImage}</div>}
     </main>
   );
 }
