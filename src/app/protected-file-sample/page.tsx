@@ -18,6 +18,7 @@ export default function Home() {
             setFile(e.target.files?.[0]);
           }}
         />
+
         <button
           onClick={async () => {
             if (file) {
@@ -47,6 +48,7 @@ export default function Home() {
       )} */}
 
       {uploadImage && <img src={uploadImage} />}
+      {uploadImage && <div>{uploadImage}</div>}
     </main>
   );
 }

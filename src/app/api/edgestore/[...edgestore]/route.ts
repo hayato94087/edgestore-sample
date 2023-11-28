@@ -1,3 +1,4 @@
+import { auth, clerkClient } from "@clerk/nextjs";
 import { initEdgeStore } from "@edgestore/server";
 import {
   type CreateContextOptions,
@@ -6,18 +7,30 @@ import {
 import { z } from "zod";
 
 type Context = {
-  userId: string;
-  userRole: "admin" | "user";
+  userId: string | null;
+  userRole: "admin" | "user" | "guest";
 };
 
 async function createContext({ req }: CreateContextOptions): Promise<Context> {
-  const id = "123456789";
-  const role = "admin";
+  const user = await auth();
 
-  return {
-    userId: id,
-    userRole: role,
-  };
+  if (user && user.userId) {
+    const clerkUser = await clerkClient.users.getUser(user.userId);
+    const role = clerkUser?.privateMetadata?.role;
+    if (!role) {
+      return { userId: user.userId, userRole: "guest" };
+    }
+
+    if (role === "admin" || role === "user") {
+      return {
+        userId: user.userId,
+        userRole: role,
+      };
+    }
+
+    return { userId: user.userId, userRole: "guest" };
+  }
+  return { userId: null, userRole: "guest" };
 }
 
 const es = initEdgeStore.context<Context>().create();

@@ -1,3 +1,4 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import { EdgeStoreProvider } from "@/lib/edgestore";
 import "./globals.css";
 
@@ -12,10 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body className="bg-white">
-        <EdgeStoreProvider>{children}</EdgeStoreProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="ja">
+        <body className="bg-white">
+          <EdgeStoreProvider>{children}</EdgeStoreProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
