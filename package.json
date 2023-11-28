@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@edgestore/react": "^0.1.4",
+    "@edgestore/server": "^0.1.4",
     "next": "13.5.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.10.0",

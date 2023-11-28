@@ -1,3 +1,4 @@
+import { EdgeStoreProvider } from "@/lib/edgestore";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="bg-white">{children}</body>
+      <body className="bg-white">
+        <EdgeStoreProvider>{children}</EdgeStoreProvider>
+      </body>
     </html>
   );
 }
