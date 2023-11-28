@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="ja">
+      <html lang="en">
         <body className="bg-white">
           <EdgeStoreProvider>{children}</EdgeStoreProvider>
         </body>
