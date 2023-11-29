@@ -9,11 +9,11 @@ dependencies:
     specifier: ^4.27.2
     version: 4.27.2(next@13.5.4)(react-dom@18.2.0)(react@18.2.0)
   '@edgestore/react':
-    specifier: ^0.1.4
-    version: 0.1.4(@edgestore/server@0.1.4)(next@13.5.4)(react-dom@18.2.0)(react@18.2.0)(zod@3.22.4)
+    specifier: ^0.1.5-alpha.3
+    version: 0.1.5-alpha.3(@edgestore/server@0.1.5-alpha.3)(next@13.5.4)(react-dom@18.2.0)(react@18.2.0)(zod@3.22.4)
   '@edgestore/server':
-    specifier: ^0.1.4
-    version: 0.1.4(zod@3.22.4)
+    specifier: ^0.1.5-alpha.3
+    version: 0.1.5-alpha.3(zod@3.22.4)
   next:
     specifier: 13.5.4
     version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
@@ -772,10 +772,10 @@ packages:
       csstype: 3.1.1
     dev: false
 
-  /@edgestore/react@0.1.4(@edgestore/server@0.1.4)(next@13.5.4)(react-dom@18.2.0)(react@18.2.0)(zod@3.22.4):
-    resolution: {integrity: sha512-mBXPOVDQe3QWXMgF8d5vp0psoo2sdJLucquF2LArG/Xw4iyGs+B80Syh35p0b5j9ZvIoQlMK7yc+oDCTlMh3bQ==}
+  /@edgestore/react@0.1.5-alpha.3(@edgestore/server@0.1.5-alpha.3)(next@13.5.4)(react-dom@18.2.0)(react@18.2.0)(zod@3.22.4):
+    resolution: {integrity: sha512-+N0cBTzYNMqcOpyAs4nXjCWoPv6EANZHkHmENJ6jjF+j1PWU02tgj+I5ui5kA79kJBxF2hjhBdu19azZ1S/atQ==}
     peerDependencies:
-      '@edgestore/server': 0.1.4
+      '@edgestore/server': 0.1.5-alpha.3
       next: '*'
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -783,7 +783,7 @@ packages:
     dependencies:
       '@aws-sdk/client-s3': 3.461.0
       '@aws-sdk/s3-request-presigner': 3.461.0
-      '@edgestore/server': 0.1.4(zod@3.22.4)
+      '@edgestore/server': 0.1.5-alpha.3(zod@3.22.4)
       '@panva/hkdf': 1.1.1
       cookie: 0.5.0
       jose: 4.15.4
@@ -796,8 +796,8 @@ packages:
       - aws-crt
     dev: false
 
-  /@edgestore/server@0.1.4(zod@3.22.4):
-    resolution: {integrity: sha512-NFFmrShzXv7/qLit5/Yf0l6MLqhClBV2brkyr4F5uZL6TAfffm+QaNaQfg1jmq0GG/0R61KMhwjo5Y00cmIhSw==}
+  /@edgestore/server@0.1.5-alpha.3(zod@3.22.4):
+    resolution: {integrity: sha512-la2mplaGf/mT2MdhUcuFDE076kNQ7CSucpnmO+k2df+PUDuBR379fZ6XKcWKvSfM5PN0kKNkjWWcUrCqpPVung==}
     peerDependencies:
       '@aws-sdk/client-s3': '>=3.0.0'
       '@aws-sdk/s3-request-presigner': '>=3.0.0'
